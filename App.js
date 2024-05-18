@@ -1,9 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import { GameEngine } from "react-native-game-engine";
-import entities from "./src/entities";
-import Physics from "./src/physics";
 import { useEffect, useState } from "react";
+
+//entities
+import entities from "./src/entities";
+
+//physics
+import Physics from "./src/physics";
 
 export default function App() {
   const [running, setRunning] = useState(false);

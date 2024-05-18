@@ -1,24 +1,22 @@
 import Matter from "matter-js";
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 
-const Bird = (props) => {
+const BirdComponent = (props) => {
   const widthBody = props.body.bounds.max.x - props.body.bounds.min.x;
   const heightBody = props.body.bounds.max.y - props.body.bounds.min.y;
 
   const xBody = props.body.position.x - widthBody / 2;
   const yBody = props.body.position.y - heightBody / 2;
 
-  const color = props.color;
-
   return (
-    <View style={styles.container(color, xBody, yBody, widthBody, heightBody)}>
+    <View style={styles.container(xBody, yBody, widthBody, heightBody)}>
       <Image source={require("../../assets/gameImages/flappy-bird-image.png")} style={styles.image} />
     </View>
   );
 };
 
-export default (world, color, pos, size) => {
+export default Bird = (world, color, pos, size) => {
   const initialBird = Matter.Bodies.rectangle(
     pos.x,
     pos.y,
@@ -31,12 +29,12 @@ export default (world, color, pos, size) => {
     body: initialBird,
     color,
     pos,
-    renderer: <Bird />,
+    renderer: <BirdComponent />,
   };
 };
 
 const styles = StyleSheet.create({
-  container: (color, xBody, yBody, widthBody, heightBody) => ({
+  container: (xBody, yBody, widthBody, heightBody) => ({
     position: "absolute",
     left: xBody,
     top: yBody,

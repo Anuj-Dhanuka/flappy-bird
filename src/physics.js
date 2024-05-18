@@ -1,6 +1,8 @@
 import Matter from "matter-js";
-import { getPipeSizePosPair } from "./utils/random";
 import { Dimensions } from "react-native";
+
+//utils
+import { getPipeSizePosPair } from "./utils/random";
 
 const windowsWidth = Dimensions.get("window").width;
 

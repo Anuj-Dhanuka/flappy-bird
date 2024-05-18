@@ -1,15 +1,19 @@
 import Matter from "matter-js"
+import {Dimensions} from "react-native"
+
+//components
 import Bird from "../components/Bird";
 import Floor from "../components/Floor";
-import {Dimensions} from "react-native"
 import Obstacle from "../components/Obstacle";
+
+//utils
 import { getPipeSizePosPair } from "../utils/random";
 
 const windowsHeight = Dimensions.get('window').height
 const windowsWidth = Dimensions.get('window').width
 
-export default restart => {
-    let engine = Matter?.Engine.create({enableSleeping: false})
+export default entities = () => {
+    const engine = Matter?.Engine.create({enableSleeping: false})
     let world = engine.world
     world.gravity.y = 0.4;
 
